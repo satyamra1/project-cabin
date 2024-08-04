@@ -1,0 +1,292 @@
+
+body{
+	line-height: 1.5;
+	/* font-family: sans-serif; */
+	font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  /* overflow-x:hidden; */
+}
+*{
+	margin:0;
+	box-sizing: border-box;
+	
+}
+/* collapse toggle */
+
+.toggle button{
+	display: none;
+	color: white;
+}
+.second{
+	overflow-x: hidden;
+}
+.greet{
+	
+	margin-left: 325px;
+	margin-bottom: 10px;
+	color: white;
+	
+}
+
+  @media(max-width: 767px){
+	.filter-section{
+		display: flex;
+		flex-direction: column;
+		background-color: #2a2932;
+		width: 250px;
+		height: 110vh;
+		position: fixed;
+		text-align: center;
+		margin-left: -30px;
+		margin-top: -20px;
+		padding-left: 0;
+		border-right: 1px solid black;
+		z-index: +1;
+		
+	}
+	
+	.searchbar {
+		width: 125%;
+		margin-left: -228px;
+	}
+
+	.heading h1{
+		text-align: center;
+		font-size: 20px;
+		margin-left: 30px;
+	
+	}
+	.greet{
+	
+		margin-left: 22%;
+		margin-bottom: 10px;
+		color: white;
+		
+	}
+	.second{
+		margin-right: 35px;
+	}
+	
+
+    .collapsible {
+		background-color: #2a2932;
+		color: #444;
+		cursor: pointer;
+		padding: 18px;
+		width: 50px;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+		
+		/* margin-top: 50px; */
+	  }
+	
+	  .toggle button{
+		position: fixed;
+		z-index: +2;
+		display: inline;
+	  }
+	  
+
+	  .content {
+		padding: 0 18px;
+		display: none;
+		overflow: hidden;
+		background-color: #f1f1f1;
+		
+		
+	  }
+	  .gallery-filter{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 70px;
+		
+		
+		
+	}
+}
+
+  /* ------------ */
+.container{
+	
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	/* max-width: 970px; */
+	padding-left: 20%;
+	padding-right: 3%;
+}
+.filter-section{
+	display: flex;
+	flex-direction: column;
+	background-color: #2a2932;
+	width: 250px;
+	height: 110vh;
+	position: fixed;
+	text-align: center;
+	
+	padding-left: 0;
+	border-right: 1px solid black;
+	z-index: +1;
+	
+}
+.heading h1{
+	text-align: center;
+}
+/* search bar  */
+.search{
+   
+    font: bold 13px sans-serif;
+     min-width: 50%;
+    position: relative;
+}
+
+.search input{
+    min-width: 50%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    background-color:  #ffffff;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 14px 15px 14px 40px;
+    border: 1px solid #b6c3cd;;
+    border-right: 0;
+    color:#4E565C;
+    outline: none;
+	text-transform: capitalize;
+   
+}
+
+
+
+.search{
+	width: 100%;
+	text-transform: capitalize;
+	margin-left: 320px;
+	
+}
+
+/* nav  */
+.gallery-filter{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* margin-top: 70px; */
+	
+	
+	
+}
+.filter-item{
+	padding: 8px;
+	width: 150px;
+	padding-top: 35px;
+
+}
+img{
+	max-width: 100%;
+	vertical-align: middle;
+}
+/*.gallery*/
+.gallery{
+	width: 100%;
+	display: block;
+	min-height: 100vh;
+	background-color: #2a2932;
+	padding: 0px 0;
+	
+	
+}
+.item img{
+	height: 230px;
+	width: 50px;
+}
+.gallery .gallery-filter{
+	padding: 0 15px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.gallery .gallery-filter .filter-item{
+	color: #ffffff;
+	font-size: 18px;
+	text-transform: uppercase;
+	display: inline-block;
+	margin:0 10px;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	line-height: 1.2;
+	transition: all 0.3s ease;
+}
+.gallery .gallery-filter .filter-item.active{
+	color: #ff9800;
+	border-color : #ff9800;
+}
+.gallery .item{
+	width: calc(100% / 3);
+	padding: 15px;
+}
+.gallery .gallery-item-inner img{
+	width: 100%;
+}
+.gallery .item.show{
+	animation: fadeIn 0.5s ease;
+}
+.gallery .gallery-item.show{
+	animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.gallery .item.hide{
+	display: none;
+}
+.gallery .gallery-item.hide{
+	display: none;
+}
+
+/*responsive*/
+@media(max-width: 991px){
+	.gallery .item{
+		width: 50%;
+	}
+}
+@media(max-width: 767px){
+    .gallery .item{
+		width: 100%;
+	}	
+	.gallery .gallery-filter .filter-item{
+		margin-bottom: 10px;
+	}
+}
+
+
+
+/* about teacher name, cabin no  */
+.overlay {
+
+  position: relative;
+  /* bottom: 0; */
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #f1f1f1;
+  width: 100%;
+  /* transition: .5s ease; */
+  /* opacity:0; */
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}

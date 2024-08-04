@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>filterable gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.min.css"  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+	.introjs-tooltip {
+		background-color: #0d0e0e;
+		color: #fff;
+		border-radius: 8px;
+		padding: 5px;
+		margin: 5px;
+		font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+		
+	
+
+	}
+
+	/* Customize the arrow */
+	.introjs-arrow {
+		border-top-color: #e21616;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+			  
+	}
+
+	/* Customize the step number */
+	.introjs-helperNumberLayer {
+		background: #ff5722;
+		color: #fff;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+			  
+	}
+
+	/* Customize the highlight layer */
+	.introjs-helperLayer {
+		background: rgba(244, 244, 241, 0.392);
+		border: 6px solid black;
+
+	}
+
+	/* Customize the progress bar */
+	.introjs-progress .introjs-progressbar {
+		background-color: #060403;
+	}
+
+	/* Customize bullets */
+	.introjs-bullets li {
+		background-color: #070505;
+	}
+	.preloader{
+		width: 100%;
+		height: 120vh;
+		background:#000 no-repeat center url("./photos/ben-redblock-loading.gif");
+		
+		position: fixed;
+		background-size: 150px;
+		z-index: 100;
+	}
+  </style>
+ 
+</head>
+<body>
+
+	<div class="preloader"></div>
+<section class="gallery">
+	<div class="container">
+		<div class="toggle">
+		 <button type="button" class="collapsible"><i class="fa-solid fa-bars" style="color: #f3efef;"></i></button>
+			<div class="content">
+				<div class="filter-section">
+					<div class="gallery-filter">
+					<img src="./photos/logogla.png" alt="logo" >
+					<div class="filltter">
+						<span class="filter-item active" data-filter="all">ALL</span>
+					<span class="filter-item " data-filter="faculty">FACULTY </span>
+					<span class="filter-item" data-filter="helpDesk">HELP DESK</span>
+					</div>
+					<!-- <a style="text-decoration: none; color:white; margin-top:30px; font-size:20px" href="/codes/index2.html">HOME PAGE</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	  
+		
+		<div class="second">
+			<div class="heading">
+				<h1 class="satt" style="text-align: center;color:white;padding-top:10px;">FACULTY CABIN INFORMATION</h1>
+			</div>
+			<br>
+			<br>
+			<div class="greet">
+				<h2  id="greet" >{name} </h2>
+			</div>
+			<!-- search bar  -->
+				 
+			<div class=" faculty search">
+				<div class="searchbar">
+					<input class="type" type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
+				</div>
+			</div>
+			<div class="row">
+				
+				<!-- image -->
+	
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/amir.jpeg" alt="faculty">
+						<div class="overlay"><h4>Amir Khan<br>Cabin:118 Ab1</h4></div>
+					</div>
+				</div>
+				
+				
+				<div  class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img  src="./photos/divya.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Divya Singh<br>
+							Cabin:3002 Ab2</h4></div>
+					</div>
+				</div>
+				
+			
+	
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/himanshu.jpg" alt="camera">
+						<div class="overlay"><h4>Himanshu Sharma<br>
+							Cabin:225 Ab1</h4></div>
+					</div>
+				</div>
+			
+	
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/subhash.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Subhash Chand<br>
+							Cabin:445 Ab1</h4></div>
+					</div>
+				</div>
+			
+	
+				<div class="gallery-item faculty camera item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Ajitesh-Kumar-ab1-222.jpg" alt="camera">
+						<div class="overlay"><h4>Ajitesh Kumar<br>
+							Cabin:222 Ab1</h4></div>
+					</div>
+				</div>
+				
+	
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Alka-Agrawal-ab2-3008.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Alka-Agrawal<br>
+							Cabin:3008 Ab2</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Anjani-Kumar-Rai-ab1-226.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Anjani Kumar Rai<br>
+							Cabin:226 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Ashish-Sharma.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Ashish Sharma<br>
+							Cabin:314 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/AskokBhansali.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Ashok Bhansali<br>
+							Cabin:317 Ab1</h4></div>
+					</div>
+				</div>
+				
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/HitendraGarg-ab1-422.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Hitendra Garg<br>
+							Cabin:422 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Mona-Kumari-ab1-229.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Mona Kumari<br>
+							Cabin:229 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/nikhil-govil-ab1-431.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Nikhil govil<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Rohit-Agarwal-ab1-228.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Rohit Agarwal<br>
+							Cabin:228 Ab1</h4></div>
+					</div>
+				</div>
+				
+	
+				<!-- -------- -->
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/akhilesh kumar singh_ab1_332.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Akhilesh kumar singh<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/amitava_sen_ab3_307.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Amitava sen<br>
+							Cabin:307 Ab3</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Anand_singh_jalal_ab1_145.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Anand singh jalal<br>
+							Cabin:145 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/anjani_kumar_rai_ab1_226.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Anjani kumar rai<br>
+							Cabin:226 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/ankur chaturvedi_ab1_228.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Ankur chaturvedi<br>
+							Cabin:228 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/anshy singh_ab1_148.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Anshy singh<br>
+							Cabin:148 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/anuj mangal_ab10_428.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Anuj mangal<br>
+							Cabin:428 Ab10</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/anupam_yadav_ab1_431.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Anupam yadav<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/asheesh tiwari_ab1_431.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Asheesh tiwari<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Ashish-Sharma_ab1_314.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Ashish Sharma<br>
+							Cabin:314 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/atul kumar uttam_ab1_229.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Atul kumar uttam<br>
+							Cabin:229 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Charul_bhatnagar_ab1_331.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Charul bhatnagar<br>
+							Cabin:331 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/dhirendra prasad yadav_ab10_227.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Dhirendra prasad yadav<br>
+							Cabin:227 Ab10</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/dilip_kumar_sharma_ab1_326.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Dilip kumar sharma<br>
+							Cabin:326 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/diwakar_bhardwaj_ab1_227.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Diwakar bhardwaj<br>
+							Cabin:227 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/gaurav sharma_ab1_229.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Gaurav sharma<br>
+							Cabin:229 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/GitanjaliVerma-ab4-329.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Gitanjali Verma<br>
+							Cabin:329 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/kailash_kumar_ab1_147.png" alt="helpDesk">
+						<div class="overlay"><h4>Kailash kumar<br>
+							Cabin:147 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/kumar_sankar_ray_ab1_430.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Kumar sankar ray<br>
+							Cabin:430 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Manoj-Kumar-Agrawal_ab1_233.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Manoj Kumar Agrawal<br>
+							Cabin:233 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/mayank agrawal_ab10_329.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Mayank agrawal<br>
+							Cabin:329 Ab10</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/narendra mohan_ab10_332.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Narendra mohan<br>
+							Cabin:332 Ab10</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/neeraj varshney_ab1_303.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Neeraj varshney<br>
+							Cabin:303 Ab1</h4></div>
+		
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/neeraj_gupta_ab1_427.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Neeraj gupta<br>
+							Cabin:427 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Piyush-Vashistha_ab1_431.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Piyush Vashistha<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/pooja_pathak_ab1_142.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Pooja pathak<br>
+							Cabin:142 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty  item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Praveen-Mittal-ab1-421.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Praveen Mittal<br>
+							Cabin:421 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Rahul-Pradhan-ab1_228.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Rahul Pradhan<br>
+							Cabin:228 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Rajesh-Kumar-Tripathi-ab1_220.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Rajesh Kumar Tripathi<br>
+							Cabin:220 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/rakesh_kumar_galav_ab1_429.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Rakesh kumar galav<br>
+							Cabin:429 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/rishi agrawal_Ab1_310.png" alt="helpDesk">
+						<div class="overlay"><h4>Rishi agrawal<br>
+							Cabin:310 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/rohit_agrawal_ab1_317.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Rohit agrawal<br>
+							Cabin:317 Ab1</h4></div>
+					</div>
+				</div>
+				
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/ruchi agrawal_ab1_431.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Ruchi agrawal<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/sachin sharma_ab10_329.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Sachin sharma<br>
+							Cabin:329 Ab10</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/sandeep_kumar_rathor_ab1_426.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Sandeep kumar rathor<br>
+							Cabin:426 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/saurabh_singhal_ab1_415.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Saurabh singhal<br>
+							Cabin:415 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Subhash-Chand_ab1_431.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Subhash Chand<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item  item">
+					<div class="gallery-item-inner">
+						<img src="./photos/swati srivastava_ab1_332.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Swati srivastava<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/vinay-agrawal-ab1-208.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Vinay agrawal<br>
+							Cabin:208 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Vivek-Sharma_ab1_332.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Aditya-Saxena-ab10-428.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Aditya Saxena<br>
+							Cabin:428 Ab10</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Ankur-Sisodia-ab1-312.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Ankur Sisodia<br>
+							Cabin:312 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/AnkurRai-ab1-332.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Ankur Rai<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Ankush-agrawal-ab1-220.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Ankush Agrawal<br>
+							Cabin:220 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/gaurav-kumar-ab1-312.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Gaurav kumar<br>
+							Cabin:312 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/munmi-gogoi-ab1-332.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Munmi gogoi<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/NeetuFaujdar-ab1-431.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Neetu Faujdar<br>
+							Cabin:431 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/pratik-roy-ab1-312.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Pratik roy<br>
+							Cabin:312 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item faculty item">
+					<div class="gallery-item-inner">
+						<img src="./photos/rashi-jaiswal-ab1-332.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Rashi jaiswal<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				
+	
+	
+				<!-- help desk  -->
+	
+				<div class="gallery-item helpDesk item">
+					<div class="gallery-item-inner">
+						<img src="./photos/Anti-ragging-Cell.jpg" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item helpDesk item">
+					<div class="gallery-item-inner">
+						<img src="./photos/dispensary.png" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item helpDesk item">
+					<div class="gallery-item-inner">
+						<img src="./photos/fees_section.png" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item helpDesk item">
+					<div class="gallery-item-inner">
+						<img src="./photos/gla_ambulance.png" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item helpDesk item">
+					<div class="gallery-item-inner">
+						<img src="./photos/gla_fire.png" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+				<div class="gallery-item helpDesk item">
+					<div class="gallery-item-inner">
+						<img src="./photos/proctorial-board.jpeg" alt="helpDesk">
+						<div class="overlay"><h4>Vivek Sharma<br>
+							Cabin:332 Ab1</h4></div>
+					</div>
+				</div>
+	
+			
+			</div>
+		</div>
+
+	
+	</div>
+	
+</section>
+
+<script>
+	function search() {
+		// Get the search query
+		let input = document.getElementById('find').value.toLowerCase();
+		
+		// Get all gallery items
+		let items = document.getElementsByClassName('gallery-item');
+	
+		// Loop through all gallery items
+		for (let i = 0; i < items.length; i++) {
+			let h4 = items[i].querySelector('h4');
+			
+			// If the h4 element exists and matches the query, show the item, otherwise hide it
+			if (h4 && h4.innerHTML.toLowerCase().indexOf(input) > -1) {
+				items[i].style.display = "block";
+			} else {
+				items[i].style.display = "none";
+			}
+		}
+	}
+	const fadeOut=()=>{
+		const loader = document.querySelector(".preloader");
+		loader.classList.remove("preloader");
+	}
+	window.addEventListener("load",fadeOut);
+
+
+//user name fetched
+document.addEventListener('DOMContentLoaded', (event) => {
+	const userName = localStorage.getItem('userName');
+	if (userName) {
+	  document.getElementById('greet').innerText = `Hello  ${userName}`;
+	}
+  });
+	</script>
+	
+
+
+<script src="./js/scripts.js"></script>
+
+</body>
+
+
+
+</html>
